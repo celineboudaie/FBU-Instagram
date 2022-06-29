@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
+#import "Parse/Parse.h"
+
 
 @interface FeedViewController ()
 
@@ -22,11 +24,13 @@
 }
 
 - (IBAction)didTapLogout:(id)sender {
-    SceneDelegate *mySceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
+    SceneDelegate *mySceneDelegate = (SceneDelegate * )
+    UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     mySceneDelegate.window.rootViewController = loginViewController;
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error){}];
 }
 
 /*

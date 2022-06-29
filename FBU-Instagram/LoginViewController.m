@@ -35,9 +35,10 @@
        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
            if (error != nil) {
                NSLog(@"Error: %@", error.localizedDescription);
+               //[self incorrectPasswordAlert];
            } else {
                NSLog(@"User registered successfully");
-               
+               [self performSegueWithIdentifier:@"loginSegue" sender:nil];
                // manually segue to logged in view
            }
        }];
@@ -51,8 +52,9 @@
            if (error != nil) {
                NSLog(@"User log in failed: %@", error.localizedDescription);
            } else {
-               NSLog(@"User logged in successfully");
                
+               NSLog(@"User logged in successfully");
+               [self performSegueWithIdentifier:@"loginSegue" sender:nil];
                // display view controller that needs to shown after successful login
            }
        }];

@@ -19,6 +19,7 @@
 		72ED5B9D286A6E3600B68B3C /* FBU_InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72ED5B9C286A6E3600B68B3C /* FBU_InstagramUITests.m */; };
 		72ED5B9F286A6E3600B68B3C /* FBU_InstagramUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72ED5B9E286A6E3600B68B3C /* FBU_InstagramUITestsLaunchTests.m */; };
 		72ED5BAD286BABBF00B68B3C /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72ED5BAC286BABBF00B68B3C /* FeedViewController.m */; };
+		72ED5BB0286CBEDC00B68B3C /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72ED5BAF286CBEDC00B68B3C /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		72ED5B9E286A6E3600B68B3C /* FBU_InstagramUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBU_InstagramUITestsLaunchTests.m; sourceTree = "<group>"; };
 		72ED5BAB286BABBF00B68B3C /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		72ED5BAC286BABBF00B68B3C /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		72ED5BAE286CBEDC00B68B3C /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		72ED5BAF286CBEDC00B68B3C /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		7AF99266C8BE2825EF52C612 /* Pods-FBU-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBU-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-FBU-Instagram/Pods-FBU-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		A4557278E2E05577D31E1FC6 /* Pods-FBU-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBU-Instagram.release.xcconfig"; path = "Target Support Files/Pods-FBU-Instagram/Pods-FBU-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		D48589D3C2384FA4A92197D2 /* Pods_FBU_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBU_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +147,8 @@
 				72ED5B88286A6E3600B68B3C /* main.m */,
 				72ED5BAB286BABBF00B68B3C /* FeedViewController.h */,
 				72ED5BAC286BABBF00B68B3C /* FeedViewController.m */,
+				72ED5BAE286CBEDC00B68B3C /* ComposeViewController.h */,
+				72ED5BAF286CBEDC00B68B3C /* ComposeViewController.m */,
 			);
 			path = "FBU-Instagram";
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				72ED5B7E286A6E3500B68B3C /* LoginViewController.m in Sources */,
 				72ED5BAD286BABBF00B68B3C /* FeedViewController.m in Sources */,
 				72ED5B78286A6E3500B68B3C /* AppDelegate.m in Sources */,
+				72ED5BB0286CBEDC00B68B3C /* ComposeViewController.m in Sources */,
 				72ED5B89286A6E3600B68B3C /* main.m in Sources */,
 				72ED5B7B286A6E3500B68B3C /* SceneDelegate.m in Sources */,
 			);
