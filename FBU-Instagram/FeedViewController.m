@@ -9,9 +9,10 @@
 #import "AppDelegate.h"
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
-#import "PostTableViewCell.h""
+#import "PostTableViewCell.h"
 #import "Post.h"
 #import "Parse/Parse.h"
+#import "DetailsViewController.h"
 
 
 @interface FeedViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -62,15 +63,16 @@
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error){}];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        NSIndexPath *senderIndex = [self.feedTableView indexPathForCell:sender];
+        Post *post = self.arrayOfPosts[senderIndex.row];
+        DetailsViewController *detailVC = [segue destinationViewController];
+        detailVC.post = post;
+
 }
-*/
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"postTableViewCell" forIndexPath:indexPath];

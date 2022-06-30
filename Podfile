@@ -7,7 +7,6 @@ target 'FBU-Instagram' do
 
   # Pods for FBU-Instagram
   pod 'Parse'
-
 target 'InstagramTests' do
     inherit! :search_paths
     # Pods for testing
