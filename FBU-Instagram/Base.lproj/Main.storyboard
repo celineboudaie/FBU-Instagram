@@ -80,26 +80,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="427" id="7bG-oy-u6a">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postTableViewCell" rowHeight="427" id="7bG-oy-u6a" customClass="PostTableViewCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="427"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7bG-oy-u6a" id="klE-aI-Arl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="427"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7s-cp-QIs">
-                                                    <rect key="frame" x="0.0" y="11" width="414" height="340"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J7s-cp-QIs">
+                                                    <rect key="frame" x="57" y="11" width="300" height="300"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="2kV-Bq-yeB"/>
+                                                        <constraint firstAttribute="height" constant="300" id="pcx-6z-fXP"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMT-Fe-vv7">
-                                                    <rect key="frame" x="20" y="359" width="383" height="68"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMT-Fe-vv7">
+                                                    <rect key="frame" x="177.5" y="319" width="59.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="J7s-cp-QIs" firstAttribute="top" secondItem="klE-aI-Arl" secondAttribute="top" constant="11" id="72h-VZ-Kpc"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aMT-Fe-vv7" secondAttribute="bottom" constant="5" id="Tgo-eX-9br"/>
+                                                <constraint firstItem="aMT-Fe-vv7" firstAttribute="top" secondItem="J7s-cp-QIs" secondAttribute="bottom" constant="8" symbolic="YES" id="Ve8-AW-bEn"/>
+                                                <constraint firstItem="J7s-cp-QIs" firstAttribute="centerX" secondItem="klE-aI-Arl" secondAttribute="centerX" id="dTp-c5-vH1"/>
+                                                <constraint firstItem="aMT-Fe-vv7" firstAttribute="centerX" secondItem="klE-aI-Arl" secondAttribute="centerX" id="du2-9d-i9X"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postCaption" destination="aMT-Fe-vv7" id="uQf-S8-F1R"/>
+                                            <outlet property="postImage" destination="J7s-cp-QIs" id="KI8-on-MvJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -119,6 +132,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="feedTableView" destination="kf8-ky-YQB" id="BBf-U5-ozd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDn-63-d7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,16 +152,12 @@
                                 <rect key="frame" x="0.0" y="4" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem id="9G5-Zb-rKR">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dss-26-GYu"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Share" id="Z05-xL-Bc9"/>
-                                    </navigationItem>
+                                    <navigationItem id="9G5-Zb-rKR"/>
                                 </items>
                             </navigationBar>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QS-cR-UL0">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="3QS-cR-UL0">
                                 <rect key="frame" x="20" y="100" width="197" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="rKv-bq-ujk" appends="YES" id="7bA-CA-r2D"/>
@@ -162,9 +174,33 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="lCB-Bj-OPt"/>
+                    <navigationItem key="navigationItem" id="lCB-Bj-OPt">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Zdm-xu-2ud">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Xf9-a2-PEF">
+                                <rect key="frame" x="20" y="11" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="tapCancel:" destination="VWm-4S-Or5" eventType="touchUpInside" id="7Wl-1h-KRT"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="6Os-MR-srB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Cw3-q1-2zf">
+                                <rect key="frame" x="302" y="11" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Share"/>
+                                <connections>
+                                    <action selector="tapShare:" destination="VWm-4S-Or5" eventType="touchUpInside" id="MOo-ze-C9J"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="postCaption" destination="sUc-XU-bq8" id="pKI-kh-zX9"/>
                         <outlet property="postImage" destination="3QS-cR-UL0" id="CSM-a6-UKq"/>
                     </connections>
                 </viewController>
@@ -213,12 +249,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
