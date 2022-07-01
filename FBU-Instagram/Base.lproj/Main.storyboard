@@ -60,7 +60,7 @@
                     <connections>
                         <outlet property="passwordField" destination="2SI-f8-7d5" id="bta-zu-KfE"/>
                         <outlet property="usernameField" destination="eeQ-1e-hWU" id="nG0-rz-eLz"/>
-                        <segue destination="YKO-xQ-6Pa" kind="presentation" identifier="loginSegue" id="fuY-6t-rbk"/>
+                        <segue destination="YKO-xQ-6Pa" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="fuY-6t-rbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
             <objects>
                 <viewController id="xRk-tJ-Kfi" customClass="FeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vjx-zC-caP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kf8-ky-YQB">
@@ -112,7 +112,7 @@
                                         <connections>
                                             <outlet property="postCaption" destination="aMT-Fe-vv7" id="uQf-S8-F1R"/>
                                             <outlet property="postImage" destination="J7s-cp-QIs" id="KI8-on-MvJ"/>
-                                            <segue destination="d5D-qb-GIp" kind="presentation" id="qTg-kN-mkn"/>
+                                            <segue destination="d5D-qb-GIp" kind="presentation" identifier="detailsSegue" id="qTg-kN-mkn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -129,7 +129,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="Whq-15-Ezr">
                             <connections>
-                                <segue destination="QdG-gc-a4T" kind="presentation" id="Rrr-vP-vRa"/>
+                                <segue destination="QdG-gc-a4T" kind="presentation" identifier="createPostSegue" id="Rrr-vP-vRa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -272,7 +272,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FeedNavigation" id="YKO-xQ-6Pa" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9w-0c-j2d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
